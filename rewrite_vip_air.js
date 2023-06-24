@@ -1,19 +1,16 @@
 /*
-有道云笔记VIP功能
-https://note.youdao.com/yws/(mapi/payment|api/self)
-hostname: note.youdao.com
+计算器Air解锁VIP
+https?:\/\/(buy|pushserv)\.(itunes|airapps)\.(apple.com/verifyReceipt|co:6001/firstrunV2)
 */
 
-
-  const path1 = "/api/self";
-  const path2 = "/mapi/payment";
+const path1 = "pushserv.airapps.co:6001";
+const path2 = "buy.itunes.apple.com";
 
 let obj = JSON.parse($response.body);
 
 if ($request.url.indexOf(path1) != -1){
-obj.vip = true,
-obj.properties.FEED_BACK_ID = 1,
-obj.properties.isvip = true
+obj.subscriptionStatus = 1,
+obj.expirationDate = 20991231
 }
 if ($request.url.indexOf(path2) != -1){
   obj.service = 1,
